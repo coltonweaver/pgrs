@@ -14,6 +14,12 @@ pub enum PgRsError {
 
     #[error("Column not found: {0}")]
     ColumnNotFound(String),
+
+    #[error("No columns specified in query")]
+    NoColumnsSpecified,
+
+    #[error("No table specified in query")]
+    NoTableSpecified,
 }
 
 /// Result type alias for pgrs operations

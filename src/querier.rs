@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::builders::Select;
+use crate::builders::SelectBuilder;
 use crate::traits::DatabaseDriver;
 
 /// Query builder factory.
@@ -15,7 +15,7 @@ impl Querier {
     }
 
     /// Start building a SELECT query.
-    pub fn select(&self) -> Select {
-        Select::new(Arc::clone(&self.driver))
+    pub fn select(&self) -> SelectBuilder {
+        SelectBuilder::new(Arc::clone(&self.driver))
     }
 }
